@@ -1,3 +1,4 @@
+
 const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
     .then( (response) => response.json())
@@ -8,15 +9,34 @@ const fetchTodos = () => {
     console.log(arrayOfTodos)
   }
 
-
-  const populateTodos = () => {
+  //func that populates fecth titles and inserts them in html list item
+  const populateTodos = (place) => {
     // console.log(arrayOfTodos[0].title)
-    const element = document.getElementById("todo-list")
+  
+    for(i=0; i<=199;i++){
+      const element = document.getElementById("todo-list")
+      const item =  document.createElement("LI")
 
-    let listItem =  document.createElement("LI")
+      if(arrayOfTodos[i].completed == true){
+        item.innerHTML = arrayOfTodos[i].title.fontcolor("red")
+      } else{
+        item.innerHTML = arrayOfTodos[i].title.fontcolor('blue')
+      }
 
-    listItem.innerHTML = arrayOfTodos[0].title
-    element.appendChild(listItem).innerHTML
-    console.log(element)
-    console.log(listItem)
+      element.appendChild(item).html
+
+    }
+
+    myArr = []
+    for(i=0; i<=199;i++){
+      a = arrayOfTodos[i].id
+      b = arrayOfTodos[i].userId
+      c = arrayOfTodos[i].title    
+      d = arrayOfTodos[i].completed
+      myArr.push(a, b, c, d)
+
+      console.log(myArr[0])
+    }
+
+
   }
