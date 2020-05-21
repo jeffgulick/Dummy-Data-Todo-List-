@@ -11,11 +11,17 @@ const fetchTodos = () => {
 
   //func that populates fecth titles and inserts them in html list item
   const populateTodos = (place) => {
-    // console.log(arrayOfTodos[0].title)
-  
+    //gets the element
+    const element = document.getElementById("todo-list")
+
+    let doTitle = '';
+    let doComplete ='';
+
     for(i=0; i<=199;i++){
-      const element = document.getElementById("todo-list")
-      const item =  document.createElement("LI")
+      doTitle = document.createTextNode(arrayOfTodos[i].title)
+      console.log(doTitle)
+
+      let item =  document.createElement("LI")//li element
 
       if(arrayOfTodos[i].completed == true){
         item.innerHTML = arrayOfTodos[i].title.fontcolor("red")
@@ -23,7 +29,9 @@ const fetchTodos = () => {
         item.innerHTML = arrayOfTodos[i].title.fontcolor('blue')
       }
 
-      element.appendChild(item).html
+      element.appendChild(item)
+
+      // element.appendChild(item).html
 
     }
 
