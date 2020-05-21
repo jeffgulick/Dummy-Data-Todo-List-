@@ -24,9 +24,9 @@ const fetchTodos = () => {
       let item =  document.createElement("LI")//li element
 
       if(arrayOfTodos[i].completed == true){
-        item.innerHTML = arrayOfTodos[i].title.fontcolor("red")
+        item.innerHTML = arrayOfTodos[i].title.fontcolor("blue")
       } else{
-        item.innerHTML = arrayOfTodos[i].title.fontcolor('blue')
+        item.innerHTML = arrayOfTodos[i].title.fontcolor('red')
       }
 
       element.appendChild(item)
