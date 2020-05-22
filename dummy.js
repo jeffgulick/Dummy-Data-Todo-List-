@@ -10,11 +10,9 @@ const fetchTodos = () => {
   }
 
   //func that populates fecth titles and inserts them in html list item
-  const populateTodos = (place) => {
+  const populateTodos = () => {
     //gets the ol element
     const element = document.getElementById("todo-list")
-
-    let doComplete ='';
 
     for(i=0; i<=199;i++){
     
